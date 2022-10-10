@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+{{>head}}
+<body>
+    {{>header}}
+    {{#each people}}
+    {{>widgets name = this.name dept = this.dept stat = this.stat}}
+    {{/each}}
+    <a href="/admin/add" class="absolute h-10 w-32 bg-gray-700 rounded mt-4 text-center leading-10 font-bold text-lg text-gray-400" style="left:12%">+</a>
+</body>
+</html>
