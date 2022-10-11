@@ -1,0 +1,29 @@
+
+<canvas id={{name}} style="width: 600px; max-width: 600px; position: relative; display: inline; height: 300px;" width="900" height="450" class="chartjs-render-monitor"></canvas>
+
+<script>
+var xValues = ["Meeting", "Break", "Work"];
+var yValues = [10, 20, 30];
+var barColors = [
+    "#8B5CF6",
+    "#06B6D4",
+    "#2D3748"
+];
+
+new Chart({{name}}, {
+  type: "pie",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "Todays status Pie chart"
+    }
+  }
+});
+</script>

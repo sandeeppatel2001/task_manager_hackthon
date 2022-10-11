@@ -122,7 +122,9 @@ router.post("/login", function (req, res, next) {
 router.get("/admin/add", (req, res) => {
   res.render("addemp.hbs");
 });
-
+router.get("/about", (req, res) => {
+  res.render("admingra.hbs");
+});
 // 	let joindate = res.body.res.render("admin.hbs");
 router.post("/admin/add", function (req, res, next) {
   //console.log(req.body);
@@ -234,6 +236,10 @@ router.get("/logout", function (req, res, next) {
 
 router.get("/forgetpass", function (req, res, next) {
   res.render("forget.ejs");
+});
+
+router.get("/employee", function (req, res, next) {
+  res.render("employee.hbs");
 });
 
 router.post("/forgetpass", function (req, res, next) {

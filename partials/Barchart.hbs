@@ -1,0 +1,53 @@
+
+<div class="w-screen height-auto flex justify-center align-item-center">
+<canvas id={{name}} style="width:100%;max-width:600px;"></canvas>
+</div>
+
+<script>
+var xValues = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+var yValues = [10,20,15,30,25];
+var yValues1 = [5,10,14,20,10];
+var yValues2 = [5,10,14,20,10];
+var xValues1 = ["Meeting", "Work", "Break"];
+var barColors = "#8B5CF6";
+var barColors1 = "#06B6D4";
+var barColors2 = "#2D3748";
+const c = [barColors, barColors1, barColors2];
+
+new Chart({{name}}, {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    },
+    {
+      backgroundColor: barColors1,
+      data: yValues1
+    },
+    {
+      backgroundColor: barColors2,
+      data: yValues2
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "Weekly Progress"
+    },
+    scales:{
+      yAxes : [{
+        ticks : {
+          beginAtZero: true
+        },
+        stacked: true
+      }],
+      xAxes : [{
+        stacked: true
+      }]
+    }
+  }
+});
+</script>
